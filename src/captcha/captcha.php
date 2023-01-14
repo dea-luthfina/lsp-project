@@ -20,7 +20,7 @@
     $_SESSION['code'] = $code;
 
     // lebar dan tinggi captcha
-    $wh = imagecreatetruecolor(220, 50);
+    $wh = imagecreatetruecolor(200, 50);
 
     // background colour
     $bgc = imagecolorallocate($wh, 20, 19, 216);
@@ -30,7 +30,7 @@
     imagefill($wh, 0, 0, $bgc);
 
     // ($image, $fontsize, $string, $fontcolor)
-    imagestring($wh, 30, 80, 20, $code, $fc);
+    imagestring($wh, 10, 80, 20, $code, $fc);
 
     // buat gambar
     header('content-type; image/jpg');
