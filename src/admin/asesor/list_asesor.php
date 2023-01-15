@@ -156,10 +156,10 @@
                             if ($i != $halaman) { 
                                 if(isset($_GET['search'])){ 
                                     $search = $_GET['search'];
-                                    echo "<li class='page-item'><a class='page-link' href='read.php?halaman=$i&search=$search'>
+                                    echo "<li class='page-item'><a class='page-link' href='list_asesor.php?halaman=$i&search=$search'>
                                         $i</a></li>";
                                 }else{ 
-                                    echo "<li class='page-item'><a class='page-link' href='read.php?halaman=$i'>$i</a></li>";
+                                    echo "<li class='page-item'><a class='page-link' href='list_asesor.php?halaman=$i'>$i</a></li>";
                                 }
                             } else {
                                 echo "<li class='page-item active'><a class='page-link' href='#'>$i</a></li>";
