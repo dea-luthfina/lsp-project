@@ -11,16 +11,15 @@
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
     <!-- sidebar -->
     <div class="sidebar">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus'></i>
-      <span class="logo_name">CodingLab</span>
+      <span class="logo_name">LSP TELEMATIKA</span>
     </div>
-      <ul class="nav-links p-0">
+      <ul class="nav-links">
         <li>
           <a href="../dashboard_admin.php">
             <i class='bx bx-grid-alt' ></i>
@@ -78,14 +77,14 @@
         </nav>
 
         <div class="home-content">
-            <div class="container">
+            <div class="container px-5">
                 <h1 class="text-center mb-5">Asesor Kompetensi LSP</h1>
                 <ul><a href="create_asesor.php"
                     class="btn btn-link text-decoration-none rounded"
                     style="background-color: #1a5cd9; color: white">
                     <i class="bi bi-person-add"></i> Tambah Asesor</a>
                 </ul>
-                <table class="table table-bordered">
+                <table class="table table-bordered" style="font-size: 14px">
                     <thead class="table-info text-center">
                         <tr>
                             <th>Nama Lengkap</th>
@@ -109,9 +108,9 @@
 
                         if(isset($_GET['search'])){ 
                             $search = $_GET['search']; 
-                            $sql="SELECT * FROM assessor WHERE assessor_name LIKE '%$search%' ORDER BY id_assessor DESC LIMIT $posisi, $batas"; 
+                            $sql="SELECT * FROM assessor WHERE assessor_name LIKE '%$search%' ORDER BY assessor_name ASC LIMIT $posisi, $batas"; 
                         }else{ 
-                            $sql="SELECT * FROM assessor ORDER BY id_assessor DESC LIMIT $posisi, $batas";
+                            $sql="SELECT * FROM assessor ORDER BY assessor_name ASC LIMIT $posisi, $batas";
                         }
 
                         // Retrieve data from the database
@@ -124,8 +123,8 @@
                             <td>".$row["email"]."</td>
                             <td>".$row["bnsp_reg_num"]."</td>
                             <td>".$row["exp_date_sertificate"]."</td>
-                            <td>
-                                <a href='read.php?nik_number=" .$row['nik_number']."' data-bs-toggle='tooltip' data-bs-title='View Record' style='color: green'>
+                            <td class='text-center'>
+                                <a href='detail_asesor.php?nik_number=" .$row['nik_number']."' data-bs-toggle='tooltip' data-bs-title='View Record' style='color: green'>
                                     <i class='fa-regular fa-eye'></i></a> 
                                 <a href='update.php?nik_number=" .$row['nik_number']."' data-bs-toggle='tooltip' data-bs-title='Update Record'> 
                                     <i class='fa-regular fa-pen-to-square'></i></a> 
@@ -141,9 +140,9 @@
                 <?php
                     if(isset($_GET['search'])){
                         $search= $_GET['search']; 
-                        $query2="SELECT * FROM assessor WHERE assessor_name LIKE '%$search%' ORDER BY id_assessor DESC"; 
+                        $query2="SELECT * FROM assessor WHERE assessor_name LIKE '%$search%' ORDER BY assessor_name ASC"; 
                     }else{ 
-                        $query2="SELECT * FROM assessor ORDER BY id_assessor DESC";
+                        $query2="SELECT * FROM assessor ORDER BY assessor_name ASC";
                     }
 
                     $result2 = mysqli_query($conn, $query2); 
