@@ -119,7 +119,7 @@
                             <td>
                                 <a href='detail_asesi.php?id_accession=" .$row['id_accession']."' style='color: green'>
                                     <i class='fa-regular fa-eye'></i></a> 
-                                <a href='update.php?id_accession=" .$row['id_accession']."'> 
+                                <a href='update_asesi.php?id_accession=" .$row['id_accession']."'> 
                                     <i class='fa-regular fa-pen-to-square'></i></a> 
                                 <a href='delete.php?id_accession=" .$row['id_accession']."' style='color: red'>
                                     <i class='fa-solid fa-trash'></i></a>
@@ -149,10 +149,10 @@
                             if ($i != $halaman) { 
                                 if(isset($_GET['search'])){ 
                                     $search = $_GET['search'];
-                                    echo "<li class='page-item'><a class='page-link' href='read.php?halaman=$i&search=$search'>
+                                    echo "<li class='page-item'><a class='page-link' href='list_asesi.php?halaman=$i&search=$search'>
                                         $i</a></li>";
                                 }else{ 
-                                    echo "<li class='page-item'><a class='page-link' href='read.php?halaman=$i'>$i</a></li>";
+                                    echo "<li class='page-item'><a class='page-link' href='list_asesi.php?halaman=$i'>$i</a></li>";
                                 }
                             } else {
                                 echo "<li class='page-item active'><a class='page-link' href='#'>$i</a></li>";

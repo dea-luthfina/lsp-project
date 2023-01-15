@@ -1,5 +1,5 @@
 <!-- panggil config -->
-<?php require "../../config/config.php"?>
+<?php require "../../../config/config.php"?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +7,7 @@
     <title>Tambah Data Asesor</title>
     <meta charset="UTF-8">
     <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
-    <link rel="stylesheet" href="../../assets/css/dashboard_style.css">
+    <link rel="stylesheet" href="../../../assets/css/dashboard_style.css">
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/021b758c3a.js" crossorigin="anonymous"></script>
     <!-- Boxicons CDN Link -->
@@ -78,6 +78,16 @@
             <div class="container" style="padding-bottom: 50px;">
             <div style="color: red;">
             <?php
+              //ambil id asesi
+              if($_GET['id_accession'] == null) {
+                header("location: update_asesi.php");
+              }
+
+              //ambil data asesor
+              $id_accession = $_GET['id_accession']; 
+              $script = "SELECT * FROM accession WHERE id_accession = '$id_accession'"; 
+              $query = mysqli_query($conn, $script); 
+              $data = mysqli_fetch_array($query); 
                 //inisialisasi data
               if(isset($_POST['submit'])) {
                 if(isset($_FILES['accession_photo'])){
@@ -105,14 +115,14 @@
                   $accession_photo = 'data:assets/img/' . $type . ';base64,' . base64_encode($data);
   
                   // insert the form data into the database
-                  $query = "INSERT INTO accession (ktp, accession_name, accession_photo, gender, phone, email, birth_place, birth_date, province, city, address, education, university, program, semester, internship_company, business_field) 
+                  $query = "UPDATE accession (ktp, accession_name, accession_photo, gender, phone, email, birth_place, birth_date, province, city, address, education, university, program, semester, internship_company, business_field) 
                             VALUES ('$ktp', '$accession_name', '$accession_photo', '$gender', '$phone', '$email', '$birth_place', '$birth_date', '$province', '$city', '$address', '$education', '$university', '$program', '$semester', '$internship_company', '$business_field')";
                   
                   
                   //check if the data inserted to database
                   $result = mysqli_query($conn, $query);
                     if($result) {
-                      header("location: ../admin/asesi/list_asesi.php");
+                      header("location: list_asesi.php");
                     } else {
                       echo "gagal mengupload data";
                     }
@@ -120,20 +130,20 @@
               }
             ?>
             </div>
-            <h1 class="text-center">Formulir Calon Peserta Uji Kompetensi</h1>
+            <h1 class="text-center">Edit Data Peserta Uji Kompetensi</h1>
             <form class="p-4" method="post" enctype="multipart/form-data">
               <h2 class="text-center text-light fw-bold my-3" style="background-color: rgb(31, 45, 61)">Data Personal</h2>
               <div class="form-group">
                   <label>No.KTP</label>
-                  <input type="number" min="0" class="form-control" placeholder="No. NIK" name="ktp" required>
+                  <input type="number" min="0" class="form-control" placeholder="No. NIK" name="ktp" required value="<?= $data['ktp']; ?>">
               </div>
               <div class="form-group">
                   <label>Nama Lengkap</label>
-                  <input type="text" class="form-control" name="accession_name" required>
+                  <input type="text" class="form-control" name="accession_name" required value="<?= $data['accession_name']; ?>">
               </div>
               <div class="form-group">
                   <label>Tempat Lahir</label>
-                  <select class="form-control" name="birth_place">
+                  <select class="form-control" name="birth_place" required>
                       <option value="">-- Pilih Kota --</option>
                       <option value="Jakarta">Jakarta</option>
                       <option value="Surabaya">Surabaya</option>
@@ -168,11 +178,11 @@
               </div>
               <div class="form-group">
                   <label>Tanggal Lahir</label>
-                  <input type="date" class="form-control" name="birth_date" required>
+                  <input type="date" class="form-control" name="birth_date" required value="<?= $data['birth_date']; ?>">
               </div>
               <div class="form-group">
                   <label>Pas Foto</label>
-                  <input style="padding: 5px;" type="file" class="form-control-file" name="accession_photo" required>
+                  <input style="padding: 5px;" type="file" class="form-control-file" name="accession_photo" required value="<?= $data['accession_photo']; ?>">
               </div>
               <div class="form-group">
                   <label>Jenis Kelamin</label>
@@ -187,7 +197,7 @@
               </div>
               <div class="form-group">
                 <td><label for="province">Provinsi</label></td>
-                <td><select class="combobox form-control select2" name="province">
+                <td><select class="combobox form-control select2" name="province" required>
                     <option value="">-- Pilih Provinsi --</option>
                     <option value="aceh">Aceh</option>
                     <option value="Sumut">Sumatera Utara</option>
@@ -227,19 +237,19 @@
             </div>
             <div class="form-group">
                 <td><label for="city">Kota</label></td>
-                <td><input type="text" class="combobox form-control select2" placeholder="Jakarta Selatan" name="city"></td>
+                <td><input type="text" class="combobox form-control select2" placeholder="Jakarta Selatan" name="city" required value="<?= $data['city']; ?>"></td>
             </div>
               <div class="form-group">
                   <label>Alamat</label>
-                  <input type="text" class="form-control" placeholder="Alamat lengkap sesuai KTP" name="address" required>
+                  <input type="text" class="form-control" placeholder="Alamat lengkap sesuai KTP" name="address" required value="<?= $data['address']; ?>">
               </div>
               <div class="form-group">
                   <label>No. Telp</label>
-                  <input type="number" min="0" class="form-control" placeholder="Nomor Hp yg aktif" name="phone" required>
+                  <input type="number" min="0" class="form-control" placeholder="Nomor Hp yg aktif" name="phone" required value="<?= $data['phone']; ?>">
               </div>
               <div class="form-group">
                   <label>Email</label>
-                  <input type="email" class="form-control" placeholder="Email Pribadi" name="email" required>
+                  <input type="email" class="form-control" placeholder="Email Pribadi" name="email" required value="<?= $data['email']; ?>">
               </div>
               <h2 class="text-center text-light fw-bold my-4" style="background-color: rgb(31, 45, 61)">Data Pendidikan</h2>
               <div class="form-group">
@@ -260,23 +270,23 @@
               </div>
               <div class="form-group">
                   <td><label for="university">Universitas</label></td>
-                  <td><input type="text" required class="form-control" placeholder="Lembaga atau Institusi Pendidikan" name="university"></td>
+                  <td><input type="text" required class="form-control" placeholder="Lembaga atau Institusi Pendidikan" name="university" value="<?= $data['university']; ?>"></td>
               </div>    
               <div class="form-group">            
                   <td><label for="program">Program Studi</label></td>
-                  <td><input type="text" required class="form-control" placeholder="Jurusan" name="program"></td>
+                  <td><input type="text" required class="form-control" placeholder="Jurusan" name="program" value="<?= $data['program']; ?>"></td>
               </div>
               <div class="form-group">
                   <td><label for="semester">Semester</label></td>
-                  <td><input type="number" min="0" required class="form-control" placeholder="Semester" name="semester"></td>
+                  <td><input type="number" min="0" required class="form-control" placeholder="Semester" name="semester" value="<?= $data['semester']; ?>"></td>
               </div>
               <div class="form-group">
                   <td><label for="internship_company">Perusahaan Tempat Magang</label></td>
-                  <td><input type="text" required class="form-control" placeholder="Nama perusahaan tempat praktek kerja" name="internship_company"></td>
+                  <td><input type="text" required class="form-control" placeholder="Nama perusahaan tempat praktek kerja" name="internship_company" value="<?= $data['internship_company']; ?>"></td>
               </div>
               <div class="form-group">
                   <td><label for="business_field">Bidang Usaha</label></td>
-                  <td><input type="text" required class="form-control" placeholder="Bidang usaha perusahaan tempat praktek" name="business_field"></td>
+                  <td><input type="text" required class="form-control" placeholder="Bidang usaha perusahaan tempat praktek" name="business_field" value="<?= $data['business_field']; ?>"></td>
               </div>
               <div class="form-group pt-4 text-center">
                   <input class="btn btn-success" type="submit" name="submit" value="Submit">
