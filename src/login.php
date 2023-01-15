@@ -48,6 +48,8 @@
                     $_SESSION['type'] = $type;
                     header('Location: admin/dashboard_admin.php');
                 }
+            } else {
+              $error = 'Upss.. Incorrect password';
             }
         // gagal akan menampilkan pesan error
         } else {
