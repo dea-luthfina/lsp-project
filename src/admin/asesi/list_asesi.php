@@ -27,13 +27,13 @@
           </a>
         </li>
         <li>
-          <a href="asesor/list_asesor.php" class="active">
+          <a href="asesor/list_asesor.php">
             <i class="fa-solid fa-chalkboard-user"></i>
             <span class="links_name">Asesor</span>
           </a>
         </li>
         <li>
-          <a href="../list_asesi.php">
+          <a href="../list_asesi.php" class="active">
             <i class="fa-solid fa-users"></i>
             <span class="links_name">Asesi</span>
           </a>
@@ -78,11 +78,11 @@
 
         <div class="home-content">
             <div class="container px-5">
-                <h1 class="text-center mb-5">Asesor Kompetensi LSP</h1>
-                <ul><a href="create_asesor.php"
+                <h1 class="text-center mb-5">Peserta Uji Kompetensi LSP</h1>
+                <ul><a href="create_asesi.php"
                     class="btn btn-link text-decoration-none rounded"
                     style="background-color: #1a5cd9; color: white">
-                    <i class="bi bi-person-add"></i> Tambah Asesor</a>
+                    <i class="bi bi-person-add"></i> Tambah Asesi</a>
                 </ul>
                 <table class="table table-bordered table-striped table-hover" style="font-size: 14px">
                     <thead class="table-info text-center">

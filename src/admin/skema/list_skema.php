@@ -23,7 +23,7 @@
       <i class='bx bxl-c-plus-plus'></i>
       <span class="logo_name">LSP TELEMATIKA</span>
     </div>
-      <ul class="nav-links">
+    <ul class="nav-links">
         <li>
           <a href="../dashboard_admin.php">
             <i class='bx bx-grid-alt' ></i>
@@ -37,19 +37,19 @@
           </a>
         </li>
         <li>
-          <a href="list_asesi.php">
+          <a href="../list_asesi.php">
             <i class="fa-solid fa-users"></i>
             <span class="links_name">Asesi</span>
           </a>
         </li>
         <li>
-          <a href="list_skema.php" class="active">
+          <a href="list_skema.php"  class="active">
           <i class="fa-solid fa-folder-open"></i>
             <span class="links_name">Skema</span>
           </a>
         </li>
         <li>
-          <a href="lsp_graph.php">
+          <a href="../lsp_graph.php">
             <i class="fa-solid fa-chart-pie"></i>
             <span class="links_name">Graph</span>
           </a>
@@ -114,7 +114,7 @@
                             <div class="card" style="width: 10rem; height: 23rem;">
                                 <img src="<?= $data['schema_cover'] ?>" class="card-img-top" alt="">
                                 <div class="card-body">
-                                    <h6 class="card-title"><?= $data['schema_name'] ?></h6>
+                                    <h6 class="card-title text-capitalize"><?= $data['schema_name'] ?></h6>
                                 </div>
                             </div>
                         </a>

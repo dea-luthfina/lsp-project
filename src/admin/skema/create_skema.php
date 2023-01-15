@@ -25,31 +25,31 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a href="dashboard_admin.php" class="active">
+          <a href="../dashboard_admin.php">
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="list_asesor.php">
+          <a href="../asesor/list_asesor.php">
             <i class="fa-solid fa-chalkboard-user"></i>
             <span class="links_name">Asesor</span>
           </a>
         </li>
         <li>
-          <a href="list_asesi.php">
+          <a href="../list_asesi.php">
             <i class="fa-solid fa-users"></i>
             <span class="links_name">Asesi</span>
           </a>
         </li>
         <li>
-          <a href="list_skema.php">
+          <a href="list_skema.php"  class="active">
           <i class="fa-solid fa-folder-open"></i>
             <span class="links_name">Skema</span>
           </a>
         </li>
         <li>
-          <a href="lsp_graph.php">
+          <a href="../lsp_graph.php">
             <i class="fa-solid fa-chart-pie"></i>
             <span class="links_name">Graph</span>
           </a>
@@ -81,7 +81,7 @@
         </nav>
 
         <div class="home-content">
-            <div class="container" style="padding-bottom: 50px;">
+            <div class="container px-5" style="padding-bottom: 50px;">
                 <div style="color: red;">
                     <?php 
                         if(isset($_POST['submit'])){
@@ -119,7 +119,7 @@
                 </div>
 
                 <form method="post" enctype="multipart/form-data">
-                    <h1 class="text-center">Tambah Data Skema</h1>
+                    <h1 class="text-center mb-5">Tambah Data Skema</h1>
                     <div class="form-group">
                         <label>Nama Skema</label>
                         <input type="text" class="form-control" name="schema_name" required autocomplete="off">
@@ -130,13 +130,13 @@
                     </div>
                     <div class="form-group">
                         <label>Unit Skema (File bereksistensi .pdf)</label>
-                        <input type="file" class="form-control" name="schema_unit" style="padding: 5px;" required>
+                        <input type="file" class="form-control-file" name="schema_unit" style="padding: 5px;" required>
                     </div>
                     <div class="form-group">
                         <label>Foto Cover Skema</label>
-                        <input type="file" class="form-control" name="schema_cover" style="padding: 5px;" required>
+                        <input type="file" class="form-control-file" name="schema_cover" style="padding: 5px;" required>
                     </div>
-                    <input type="submit" class="btn btn-success" name="submit" value="Add">
+                    <center><input type="submit" class="btn btn-success" name="submit" value="Add Skema"></center>
                 </form>
             </div>
         </div>

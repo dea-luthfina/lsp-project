@@ -7,6 +7,3 @@ sidebarBtn.onclick = function() {
 }else
     sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
 }
-
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
