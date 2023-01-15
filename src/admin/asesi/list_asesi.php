@@ -79,19 +79,13 @@
         <div class="home-content">
             <div class="container px-5">
                 <h1 class="text-center mb-5">Peserta Uji Kompetensi LSP</h1>
-                <ul><a href="create_asesi.php"
-                    class="btn btn-link text-decoration-none rounded"
-                    style="background-color: #1a5cd9; color: white">
-                    <i class="bi bi-person-add"></i> Tambah Asesi</a>
-                </ul>
                 <table class="table table-bordered table-striped table-hover" style="font-size: 14px">
                     <thead class="table-info text-center">
                         <tr>
-                            <th>Nama Lengkap</th>
+                            <th>NO</th>
                             <th>NIK</th>
+                            <th>Nama Peserta</th>
                             <th>Email</th>
-                            <th>Nomor Register BNSP</th>
-                            <th>Masa Berlaku Sertifikat Asesor</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -108,27 +102,26 @@
 
                         if(isset($_GET['search'])){ 
                             $search = $_GET['search']; 
-                            $sql="SELECT * FROM assessor WHERE assessor_name LIKE '%$search%' ORDER BY assessor_name ASC LIMIT $posisi, $batas"; 
+                            $sql="SELECT * FROM accession WHERE accession_name LIKE '%$search%' ORDER BY id_accession ASC LIMIT $posisi, $batas"; 
                         }else{ 
-                            $sql="SELECT * FROM assessor ORDER BY assessor_name ASC LIMIT $posisi, $batas";
+                            $sql="SELECT * FROM accession ORDER BY id_accession ASC LIMIT $posisi, $batas";
                         }
 
                         // Retrieve data from the database
                         $hasil=mysqli_query($conn, $sql); 
                         while ($row = mysqli_fetch_array($hasil)) {
                         // Output data of each row
-                            echo "<tr>
-                            <td class='text-capitalize'>".$row["assessor_name"]."</td>
-                            <td>".$row["nik_number"]."</td>
+                            echo "<tr class='text-center'>
+                            <td>".$row["id_accession"]."</td>
+                            <td>".$row["ktp"]."</td>
+                            <td class='text-capitalize'>".$row["accession_name"]."</td>
                             <td>".$row["email"]."</td>
-                            <td>".$row["bnsp_reg_num"]."</td>
-                            <td>".$row["exp_date_sertificate"]."</td>
-                            <td class='text-center'>
-                                <a href='detail_asesor.php?nik_number=" .$row['nik_number']."' style='color: green'>
+                            <td>
+                                <a href='detail_asesi.php?id_accession=" .$row['id_accession']."' style='color: green'>
                                     <i class='fa-regular fa-eye'></i></a> 
-                                <a href='update.php?nik_number=" .$row['nik_number']."'> 
+                                <a href='update.php?id_accession=" .$row['id_accession']."'> 
                                     <i class='fa-regular fa-pen-to-square'></i></a> 
-                                <a href='delete.php?nik_number=" .$row['nik_number']."' style='color: red'>
+                                <a href='delete.php?id_accession=" .$row['id_accession']."' style='color: red'>
                                     <i class='fa-solid fa-trash'></i></a>
                             </td>
                             </tr>";
@@ -140,9 +133,9 @@
                 <?php
                     if(isset($_GET['search'])){
                         $search= $_GET['search']; 
-                        $query2="SELECT * FROM assessor WHERE assessor_name LIKE '%$search%' ORDER BY assessor_name ASC"; 
+                        $query2="SELECT * FROM accession WHERE accession_name LIKE '%$search%' ORDER BY accession_name ASC"; 
                     }else{ 
-                        $query2="SELECT * FROM assessor ORDER BY assessor_name ASC";
+                        $query2="SELECT * FROM accession ORDER BY accession_name ASC";
                     }
 
                     $result2 = mysqli_query($conn, $query2); 
