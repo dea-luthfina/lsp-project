@@ -115,8 +115,9 @@
                   $accession_photo = 'data:assets/img/' . $type . ';base64,' . base64_encode($data);
   
                   // insert the form data into the database
-                  $query = "UPDATE accession (ktp, accession_name, accession_photo, gender, phone, email, birth_place, birth_date, province, city, address, education, university, program, semester, internship_company, business_field) 
-                            VALUES ('$ktp', '$accession_name', '$accession_photo', '$gender', '$phone', '$email', '$birth_place', '$birth_date', '$province', '$city', '$address', '$education', '$university', '$program', '$semester', '$internship_company', '$business_field')";
+                  $query = "UPDATE accession SET ktp='$ktp', accession_name='$accession_name', accession_photo='$accession_photo', gender='$gender', phone='$phone', email='$email', 
+                  birth_place='$birth_place', birth_date='$birth_date', province='$province', city='$city', address='$address', education='$education', university='$university', 
+                  program='$program', semester='$semester', internship_company='$internship_company', business_field='$business_field')";
                   
                   
                   //check if the data inserted to database
