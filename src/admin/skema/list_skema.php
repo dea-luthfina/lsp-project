@@ -85,7 +85,7 @@
 
         <div class="home-content">
             <h1 class="text-center">List Skema</h1>
-                <div class="row" style="padding-left: 50px; padding-right: 50px;">
+                <div class="row mt-5" style="padding-left: 50px; padding-right: 50px;">
                     <?php
                         // pagination, batas itu contentnya ada berapa dalam satu page
                         $batas = 6; 
@@ -109,10 +109,10 @@
                         while ($data = mysqli_fetch_array($hasil)) {
                     ?>
 
-                    <div class="col-sm-2">
+                    <div class="col-md-3 pe-4">
                         <a href="detail_skema.php?id_schema=<?= $data['id_schema'] ?>">
-                            <div class="card" style="width: 10rem; height: 23rem;">
-                                <img src="<?= $data['schema_cover'] ?>" class="card-img-top" alt="">
+                            <div class="card">
+                                <img src="<?= $data['schema_cover'] ?>" width="100%" class="card-img-top" alt="">
                                 <div class="card-body">
                                     <h6 class="card-title text-capitalize"><?= $data['schema_name'] ?></h6>
                                 </div>
@@ -120,6 +120,16 @@
                         </a>
                     </div>
                     <?php } ?>
+                    <div class="col-md-3 pe-4">
+                    <a href="create_skema.php">
+                            <div class="card">
+                                <img src="../../assets/img/add.png" width="100%" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h6 class="card-title text-capitalize">ADD SKEMA</h6>
+                                </div>
+                            </div>
+                        </a>
+                        </div>
 
                     <?php
                         if(isset($_GET['search'])){

@@ -81,7 +81,7 @@
         </nav>
 
         <div class="home-content">
-            <div class="container" style="padding-bottom: 50px;">
+            <div class="container px-5" style="padding-bottom: 50px;">
             <div style="color: red;">
             <?php
                 //ambil id schema
@@ -138,16 +138,16 @@
             </div>
             <h1 class="text-center">Tambah Data Asesor</h1>
             <form class="p-4" method="post" enctype="multipart/form-data">
-              <h4 class="text-center p">Data Skema</h4>
+              <h2 class="text-center text-light fw-bold my-4" style="background-color: rgb(31, 45, 61)">Data Skema</h2>
               <div class="form-group">
                   <label>ID Skema</label>
                   <input type="number" class="form-control" name="id_schema" disabled required value="<?= $data['id_schema']?>">
               </div>
-              <div class="form-group">
+              <div class="form-group mb-5">
                   <label>Nama Skema</label>
                   <input type="text" class="form-control" name="schema_name" disabled required value="<?= $data['schema_name']?>">
               </div>
-              <h4 class="text-center pt-3">Data Asesor</h4>
+              <h2 class="text-center text-light fw-bold mb-4" style="background-color: rgb(31, 45, 61)">Data Asesor</h2>
               <div class="form-group">
                   <label>Nama Lengkap</label>
                   <input type="text" class="form-control" name="assessor_name" required>
