@@ -83,8 +83,13 @@
             </div>
         </nav>
 
-        <div class="home-content">
-            <h1 class="text-center">List Skema</h1>
+        <div class="home-content px-5">
+            <h1 class="text-center mb-5">List Skema</h1>
+            <ul><a href="create_skema.php"
+                class="btn btn-link text-decoration-none rounded"
+                style="background-color: #1a5cd9; color: white">
+                <i class="bi bi-person-add"></i> Tambah Skema</a>
+            </ul>
                 <div class="row mt-5" style="padding-left: 50px; padding-right: 50px;">
                     <?php
                         // pagination, batas itu contentnya ada berapa dalam satu page
@@ -120,16 +125,6 @@
                         </a>
                     </div>
                     <?php } ?>
-                    <div class="col-md-3 pe-4">
-                    <a href="create_skema.php">
-                      <div class="card">
-                          <img src="../../assets/img/add.png" width="100%" class="card-img-top" alt="">
-                          <div class="card-body">
-                              <h6 class="card-title text-capitalize">ADD SKEMA</h6>
-                          </div>
-                      </div>
-                    </a>
-                    </div>
 
                     <?php
                         if(isset($_GET['search'])){
@@ -143,7 +138,6 @@
                         $jmldata = mysqli_num_rows($result2); 
                         $jmlhalaman = ceil($jmldata/$batas);
                     ?>
-                    
                 </div> 
         </div>
     </section>

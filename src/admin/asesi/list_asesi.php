@@ -123,7 +123,7 @@
                                     <i class='fa-regular fa-eye'></i></a> 
                                 <a href='update_asesi.php?id_accession=" .$row['id_accession']."'> 
                                     <i class='fa-regular fa-pen-to-square'></i></a> 
-                                <a href='delete.php?id_accession=" .$row['id_accession']."' style='color: red'>
+                                <a href='delete_asesi.php?id_accession=" .$row['id_accession']."' style='color: red'>
                                     <i class='fa-solid fa-trash'></i></a>
                             </td>
                             </tr>";

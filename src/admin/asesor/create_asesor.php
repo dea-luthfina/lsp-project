@@ -251,7 +251,7 @@
                   <label>Nama Lembaga/Perusahaan</label>
                   <input type="text" class="form-control" placeholder="Nama perusahaan tempat kerja" name="institutional_name" required>
               </div>
-              <input type="submit" class="btn btn-success" name="submit" value="Add">
+              <center><input type="submit" class="btn btn-success" name="submit" value="Submit"></center>
             </form>
         </div>
     </div>

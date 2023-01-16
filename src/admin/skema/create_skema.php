@@ -136,7 +136,7 @@
                         <label>Foto Cover Skema</label>
                         <input type="file" class="form-control-file" name="schema_cover" style="padding: 5px;" required>
                     </div>
-                    <center><input type="submit" class="btn btn-success" name="submit" value="Add Skema"></center>
+                    <center><input type="submit" class="btn btn-success" name="submit" value="Submit"></center>
                 </form>
             </div>
         </div>
