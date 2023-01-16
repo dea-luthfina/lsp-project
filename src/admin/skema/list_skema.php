@@ -122,14 +122,14 @@
                     <?php } ?>
                     <div class="col-md-3 pe-4">
                     <a href="create_skema.php">
-                            <div class="card">
-                                <img src="../../assets/img/add.png" width="100%" class="card-img-top" alt="">
-                                <div class="card-body">
-                                    <h6 class="card-title text-capitalize">ADD SKEMA</h6>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
+                      <div class="card">
+                          <img src="../../assets/img/add.png" width="100%" class="card-img-top" alt="">
+                          <div class="card-body">
+                              <h6 class="card-title text-capitalize">ADD SKEMA</h6>
+                          </div>
+                      </div>
+                    </a>
+                    </div>
 
                     <?php
                         if(isset($_GET['search'])){

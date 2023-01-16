@@ -86,6 +86,7 @@
                             <th>NIK</th>
                             <th>Nama Peserta</th>
                             <th>Email</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -116,6 +117,7 @@
                             <td>".$row["ktp"]."</td>
                             <td class='text-capitalize'>".$row["accession_name"]."</td>
                             <td>".$row["email"]."</td>
+                            <td>".$row["status"]."</td>
                             <td>
                                 <a href='detail_asesi.php?id_accession=" .$row['id_accession']."' style='color: green'>
                                     <i class='fa-regular fa-eye'></i></a> 

@@ -34,7 +34,7 @@
                           </tr>
                           <tr>
                             <th>Tempat Lahir</th>
-                            <td>".$row["birth_date"]."</td>
+                            <td>".$row["birth_place"]."</td>
                           </tr>
                           <tr>
                             <th>Tanggal Lahir</th>
