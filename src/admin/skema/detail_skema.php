@@ -45,7 +45,7 @@
       <i class='bx bxl-c-plus-plus'></i>
       <span class="logo_name">LSP TELEMATIKA</span>
     </div>
-    <ul class="nav-links p-0">
+      <ul class="nav-links p-0">
         <li>
           <a href="../dashboard_admin.php">
             <i class='bx bx-grid-alt' ></i>
@@ -59,7 +59,7 @@
           </a>
         </li>
         <li>
-          <a href="../list_asesi.php">
+          <a href="../asesi/list_asesi.php">
             <i class="fa-solid fa-users"></i>
             <span class="links_name">Asesi</span>
           </a>

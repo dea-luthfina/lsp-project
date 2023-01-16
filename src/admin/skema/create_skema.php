@@ -24,7 +24,7 @@
       <span class="logo_name">LSP TELEMATIKA</span>
     </div>
       <ul class="nav-links">
-        <li>
+      <li>
           <a href="../dashboard_admin.php">
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
@@ -37,7 +37,7 @@
           </a>
         </li>
         <li>
-          <a href="../list_asesi.php">
+          <a href="../asesi/list_asesi.php">
             <i class="fa-solid fa-users"></i>
             <span class="links_name">Asesi</span>
           </a>
