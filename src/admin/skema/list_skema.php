@@ -37,7 +37,7 @@
           </a>
         </li>
         <li>
-          <a href="../list_asesi.php">
+          <a href="../asesi/list_asesi.php">
             <i class="fa-solid fa-users"></i>
             <span class="links_name">Asesi</span>
           </a>

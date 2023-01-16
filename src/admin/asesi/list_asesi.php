@@ -27,13 +27,13 @@
           </a>
         </li>
         <li>
-          <a href="asesor/list_asesor.php">
+          <a href="../asesor/list_asesor.php">
             <i class="fa-solid fa-chalkboard-user"></i>
             <span class="links_name">Asesor</span>
           </a>
         </li>
         <li>
-          <a href="../list_asesi.php" class="active">
+          <a href="list_asesi.php" class="active">
             <i class="fa-solid fa-users"></i>
             <span class="links_name">Asesi</span>
           </a>
@@ -45,7 +45,7 @@
           </a>
         </li>
         <li>
-          <a href="lsp_graph.php">
+          <a href="../lsp_graph.php">
             <i class="fa-solid fa-chart-pie"></i>
             <span class="links_name">Graph</span>
           </a>
