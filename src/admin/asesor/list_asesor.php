@@ -128,7 +128,7 @@
                                     <i class='fa-regular fa-eye'></i></a> 
                                 <a href='update.php?nik_number=" .$row['nik_number']."'> 
                                     <i class='fa-regular fa-pen-to-square'></i></a> 
-                                <a href='delete.php?nik_number=" .$row['nik_number']."' style='color: red'>
+                                <a href='delete_asesor.php?nik_number=" .$row['nik_number']."' style='color: red' onclick='return confirm(\"Apakah anda yakin ingin menghapus data '".$row['assessor_name']."'?\");'>
                                     <i class='fa-solid fa-trash'></i></a>
                             </td>
                             </tr>";
