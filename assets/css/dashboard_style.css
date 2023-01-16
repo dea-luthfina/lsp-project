@@ -347,6 +347,15 @@ nav .profile-details i{
   font-weight: 400;
   color: #333;
 }
+.detail-asesi{
+  background-image: url('../../assets/img/cover-3.png');
+  background-size: cover;
+}
+.detail-asesi .container{
+  padding: 5rem 7rem;
+}
+
+
 /* Responsive Media Query */
 @media (max-width: 1240px) {
   .sidebar{
